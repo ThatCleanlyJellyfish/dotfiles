@@ -76,6 +76,7 @@ vim.opt.scrolloff = 10
 
 vim.keymap.set({ 'n', 'v' }, ';', ':', { desc = "Swap mapping of ';' and ':' to make ex commands easier." })
 vim.keymap.set({ 'n', 'v' }, ':', ';', { desc = "Swap mapping of ';' and ':' to make ex commands easier." })
+vim.keymap.set('n', 'gf', ':e <cfile><CR>', { desc = 'gf creates the file if it does not exist' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
