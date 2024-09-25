@@ -77,7 +77,7 @@ HIST_IGNORE_SPACE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 zstyle ':omz:plugins:nvm' lazy yes
-plugins=(aliases colored-man-pages command-not-found dirpersist git gitignore extract nvm vi-mode zoxide)
+plugins=(aliases colored-man-pages command-not-found dirpersist evalcache git gitignore extract nvm vi-mode zoxide)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -155,6 +155,6 @@ function timesh() {
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+_evalcache pyenv init -
 
-eval "$(oh-my-posh init zsh --config $ZSH_CUSTOM/prompt.omp.json)"
+_evalcache oh-my-posh init zsh --config $ZSH_CUSTOM/prompt.omp.json
