@@ -76,7 +76,8 @@ HIST_IGNORE_SPACE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aliases colored-man-pages command-not-found dirpersist git gitignore extract vi-mode zoxide)
+zstyle ':omz:plugins:nvm' lazy yes
+plugins=(aliases colored-man-pages command-not-found dirpersist git gitignore extract nvm vi-mode zoxide)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -155,9 +156,5 @@ function timesh() {
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(oh-my-posh init zsh --config $ZSH_CUSTOM/prompt.omp.json)"
