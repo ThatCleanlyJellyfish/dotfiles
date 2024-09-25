@@ -1,0 +1,27 @@
+[alias]
+	st = status
+	ch = checkout
+	co = commit
+	cov = commit --verbose
+	noed = commit --amend --no-edit
+	br = for-each-ref --sort=-committerdate refs/heads/ --format='%(if)%(HEAD)%(then)* %(color:green)%(else)  %(end)%(refname:short) %(color:yellow)%(committerdate:relative)%(color:reset)'
+	l = log --decorate --graph --oneline
+	pushf = push --force-with-lease
+[push]
+	default = current
+[user]
+	email = adrian@literal-labs.ai
+	name = Adrian Wheeldon
+[diff]
+	tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = diffconflicts
+[mergetool "diffconflicts"]
+	cmd = vim -c DiffConflicts \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[init]
+	defaultBranch = main
