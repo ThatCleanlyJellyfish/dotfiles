@@ -9,9 +9,8 @@
 	pushf = push --force-with-lease
 [push]
 	default = current
-[user]
-	email = adrian@literal-labs.ai
-	name = Adrian Wheeldon
+[include]
+	path = ~/.gitconfig_user
 [diff]
 	tool = nvimdiff
 [difftool "nvimdiff"]
