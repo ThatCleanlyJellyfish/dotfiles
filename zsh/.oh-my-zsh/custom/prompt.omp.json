@@ -75,7 +75,7 @@
             "threshold": 1000
           },
           "style": "plain",
-          "template": "took \uf252 {{ .FormattedMs }} ",
+          "template": "\uf252 {{ .FormattedMs }} ",
           "type": "executiontime"
         },
         {
