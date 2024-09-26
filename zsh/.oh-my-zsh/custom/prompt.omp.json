@@ -36,6 +36,12 @@
           "style": "plain",
           "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
+        },
+        {
+          "style": "plain",
+          "foreground": "#ffffff",
+          "template": "{{if ne .Env.BG_JOBS \"0\" }}\udb86\udd33 {{ .Env.BG_JOBS }}{{ end }}",
+          "type": "text"
         }
       ],
       "type": "prompt"
