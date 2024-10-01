@@ -181,6 +181,22 @@ require('lazy').setup({
     },
   },
 
+  -- Code Folding
+  {
+    'chrisgrieser/nvim-origami',
+    event = 'VeryLazy',
+    opts = {
+      keepFoldsAcrossSessions = false,
+      pauseFoldsOnSearch = true,
+      setupFoldKeymaps = true,
+      hOnlyOpensOnFirstColumn = false,
+    },
+  },
+  {
+    'kalekundert/vim-coiled-snake',
+    -- dependencies = { 'Konfekt/FastFold' },
+  },
+
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
