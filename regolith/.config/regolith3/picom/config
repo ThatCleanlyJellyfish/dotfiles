@@ -107,7 +107,7 @@ frame-opacity = 1;
 inactive-opacity-override = false;
 
 # Dim inactive windows. (0.0 - 1.0)
-inactive-dim = 0.03;
+inactive-dim = 0.05;
 # Do not let dimness adjust based on window opacity.
 inactive-dim-fixed = true;
 # Blur background of transparent windows. Bad performance with X Render backend. GLX backend is preferred.
@@ -130,7 +130,7 @@ blur-background-exclude = [
 # Fade windows during opacity changes.
 fading = true;
 # The time between steps in a fade in milliseconds. (default 10).
-fade-delta = 3;
+fade-delta = 2;
 # Opacity change between steps while fading in. (default 0.028).
 fade-in-step = 0.03;
 # Opacity change between steps while fading out. (default 0.03).
@@ -199,11 +199,11 @@ wintypes:
     tooltip =
     {
         # fade: Fade the particular type of windows.
-        fade = true;
+        fade = false;
         # shadow: Give those windows shadow
         shadow = false;
         # opacity: Default opacity for the type of windows.
-        opacity = 0.85;
+        opacity = 1.0;
         # focus: Whether to always consider windows of this type focused.
         focus = true;
     };
