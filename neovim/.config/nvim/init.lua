@@ -195,7 +195,12 @@ require('lazy').setup({
   },
   {
     'kalekundert/vim-coiled-snake',
+    ft = { 'python' },
+    -- Fast fold shouldn't be required on Neovim.
     -- dependencies = { 'Konfekt/FastFold' },
+    config = function()
+      vim.g.coiled_snake_foldtext_flags = ''
+    end,
   },
 
   -- NOTE: Plugins can also be added by using a table,
