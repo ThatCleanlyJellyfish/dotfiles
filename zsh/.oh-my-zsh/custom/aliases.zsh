@@ -4,3 +4,5 @@ alias l='ls'
 alias la='ls -A'
 alias ll='ls -lh'
 alias lla='ls -lAh'
+
+alias gch='git checkout'
