@@ -530,6 +530,13 @@ require('lazy').setup({
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+          -- toggle diagnostics on and off
+          map('<leader>td', function()
+            local buf_id = vim.api.nvim_get_current_buf()
+            local is_enabled = vim.diagnostic.is_enabled { bufnr = buf_id }
+            vim.diagnostic.enable(not is_enabled, { bufnr = buf_id })
+          end, '[T]oggle [D]iagnostics')
+
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
