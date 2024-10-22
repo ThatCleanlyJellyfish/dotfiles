@@ -159,6 +159,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+  'LunarVim/bigfile.nvim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'whiteinge/diffconflicts', -- Nicer diff tool.
   -- Automatic split resizing.
