@@ -7,6 +7,7 @@
 	br = for-each-ref --sort=-committerdate refs/heads/ --format='%(if)%(HEAD)%(then)* %(color:green)%(else)  %(end)%(refname:short) %(color:yellow)%(committerdate:relative)%(color:reset)'
 	l = log --decorate --graph --oneline
 	pushf = push --force-with-lease
+	wdiff = diff --word-diff=color
 [push]
 	default = current
 [include]
