@@ -23,3 +23,7 @@ wm.floatingwindow.border.size: 3
 ! No gaps by default.
 wm.gaps.inner.size: 0
 wm.gaps.outer.size: 0
+! Switch back to the previous workspace when "switching" to the current
+! workspace. E.g. Starting on workspace 1, pressing mod+2; mod+2; will switch to
+! workspace 2, then back to workspace 1.
+wm.workspace.auto_back_and_forth yes
