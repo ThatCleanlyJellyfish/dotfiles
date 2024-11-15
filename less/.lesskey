@@ -1,3 +1,4 @@
 #env
 # Center search results
-LESS = -j.5
+# Display colour in output instead of raw control sequences
+LESS = -j.5 -R
