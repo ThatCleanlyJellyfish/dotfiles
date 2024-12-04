@@ -1,4 +1,5 @@
 #env
 # Center search results
 # Display colour in output instead of raw control sequences
-LESS = -j.5 -R
+# Case insensitive search
+LESS = -j.5 -R -i
