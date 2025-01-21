@@ -1,8 +1,9 @@
 -- Use focus.nvim for its UI options like disabling relativenumber on unfocussed windows.
 return {
   'beauwilliams/focus.nvim',
-  version = false,
+  version = '*',
   opts = {
+    enable = true,
     autoresize = {
       enable = false,
       height_quickfix = 10,
@@ -19,7 +20,7 @@ return {
       winhighlight = false,
     },
   },
-  config = function ()
+  init = function ()
     -- Disable focus.nvim for these file and buffer types.
     local ignore_filetypes = { 'neo-tree' }
     local ignore_buftypes = { 'nofile', 'prompt', 'popup' }
