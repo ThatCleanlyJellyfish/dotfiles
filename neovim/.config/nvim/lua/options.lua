@@ -45,4 +45,10 @@ vim.opt.scrolloff = 10
 -- Increase scrollback in terminals
 vim.opt.scrollback = 100000
 
+local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
+for name, icon in pairs(symbols) do
+	local hl = "DiagnosticSign" .. name
+	vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
+end
+
 -- vim: ts=2 sts=2 sw=2 et
