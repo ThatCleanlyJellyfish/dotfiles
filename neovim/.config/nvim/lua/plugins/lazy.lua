@@ -26,33 +26,6 @@ return {
     },
   },
 
-  -- Code Folding
-  {
-    'chrisgrieser/nvim-origami',
-    event = 'VeryLazy',
-    opts = {
-      keepFoldsAcrossSessions = false,
-      pauseFoldsOnSearch = true,
-      setupFoldKeymaps = true,
-      hOnlyOpensOnFirstColumn = false,
-    },
-  },
-  {
-    'kevinhwang91/nvim-ufo',
-    dependencies = {
-      'kevinhwang91/promise-async',
-      {
-        'kalekundert/vim-coiled-snake',
-        ft = { 'python' },
-        -- Fast fold shouldn't be required on Neovim.
-        -- dependencies = { 'Konfekt/FastFold' },
-        config = function()
-          vim.g.coiled_snake_foldtext_flags = ''
-        end,
-      },
-    },
-  },
-
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
