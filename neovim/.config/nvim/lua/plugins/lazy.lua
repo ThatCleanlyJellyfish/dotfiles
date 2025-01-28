@@ -312,7 +312,7 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     -- Only activate for these filetypes. The plugin supports files which embed markdown too.
-    ft = { 'markdown' },
+    ft = { 'markdown', 'codecompanion' },
     opts = {
       preset = 'lazy', -- Preconfigured settings for lazy.nvim
       heading = {
