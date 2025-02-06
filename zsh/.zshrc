@@ -95,6 +95,7 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='nvim'
 # fi
 export EDITOR=nvim
+export SUDO_EDITOR="/home/$USER/.local/share/bob/nvim-bin/nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
