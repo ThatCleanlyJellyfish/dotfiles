@@ -233,12 +233,22 @@ return {
         use_icons = vim.g.have_nerd_font,
         content = {
           active = function()
-            local mode, mode_hl = MiniStatusline.section_mode { trunc_width = 120 }
+            local mode, mode_hl = MiniStatusline.section_mode { trunc_width = 9999 }
             local git = MiniStatusline.section_git { trunc_width = 40 }
-            local diff = MiniStatusline.section_diff { trunc_width = 75 }
-            local diagnostics = MiniStatusline.section_diagnostics { trunc_width = 75 }
-            local filename = MiniStatusline.section_filename { trunc_width = 140 }
-            local fileinfo = MiniStatusline.section_fileinfo { trunc_width = 120 }
+            local diff = MiniStatusline.section_diff { trunc_width = 75, icon = "" }
+            -- Get the signs which were populated by vim.fn.sign_define() in options.lua.
+            local sign_map = {}
+            for _, sign in ipairs(vim.fn.sign_getdefined()) do
+              local name = sign.name
+              if name:match("^DiagnosticSign") then
+                local diag_type = name:match("^DiagnosticSign(%a+)")
+                -- section_diagnostics uses uppercase names for the sign types (ERROR, WARN, etc...)
+                sign_map[diag_type:upper()] = sign.text
+              end
+            end
+            local diagnostics = MiniStatusline.section_diagnostics { trunc_width = 75, signs = sign_map, icon = "" }
+            local filename = MiniStatusline.section_filename { trunc_width = 120 }
+            local fileinfo = MiniStatusline.section_fileinfo { trunc_width = 9999 }
             local location = '%2l:%-2v'
             local search = MiniStatusline.section_searchcount { trunc_width = 75 }
 
