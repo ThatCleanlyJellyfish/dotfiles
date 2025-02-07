@@ -252,6 +252,9 @@ return {
             local location = '%2l:%-2v'
             local search = MiniStatusline.section_searchcount { trunc_width = 75 }
 
+            -- New highlight group for filenames when the file is modified.
+            vim.api.nvim_set_hl(0, 'MiniStatuslineModified', { ctermfg = 0, ctermbg = 9, bg = 'NvimDarkRed' })
+
             -- Usage of `MiniStatusline.combine_groups()` ensures highlighting and
             -- correct padding with spaces between groups (accounts for 'missing'
             -- sections, etc.)
@@ -259,7 +262,7 @@ return {
               { hl = mode_hl, strings = { mode } },
               { hl = 'MiniStatuslineDevinfo', strings = { git, diff, diagnostics } },
               '%<', -- Mark general truncate point
-              { hl = 'MiniStatuslineFilename', strings = { filename } },
+              { hl = vim.bo.modified and 'MiniStatuslineModified' or 'MiniStatuslineFilename', strings = { filename } },
               '%=', -- End left alignment
               { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
               { hl = mode_hl, strings = { search, location } },
