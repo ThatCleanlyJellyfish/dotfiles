@@ -274,22 +274,6 @@ return {
       -- More cool icons. Also used by render-markdown.nvim.
       require('mini.icons').setup()
 
-      local starter = require 'mini.starter'
-      starter.setup {
-        autoopen = true,
-        evaluate_single = true,
-        silent = true,
-        header = 'LL',
-        footer = os.date(),
-        items = {
-          starter.sections.recent_files(10, true, false),
-          { action = 'Lazy', name = 'L: Open Lazy.nvim', section = 'Actions' },
-          { action = 'Mason', name = 'M: Open Mason config', section = 'Actions' },
-          { action = 'e $MYVIMRC', name = 'Edit init.lua', section = 'Actions' },
-          { action = 'q', name = 'Quit', section = 'Actions' },
-        },
-      }
-
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
