@@ -158,7 +158,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 _evalcache pyenv init -
 
-_evalcache oh-my-posh init zsh --config $ZSH_CUSTOM/prompt.omp.json
+_evalcache oh-my-posh init zsh --config $ZSH_CUSTOM/prompt.omp.yaml
 # Pass the number of background jobs to oh-my-posh for the prompt.
 function set_poshcontext() {
   export BG_JOBS=$(jobs | wc -l | xargs)
