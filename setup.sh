@@ -5,7 +5,7 @@
 
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install stow zoxide zsh
+sudo apt-get install ripgrep stow zoxide zsh
 
 #########################
 # Rustup + Bob + Neovim #
