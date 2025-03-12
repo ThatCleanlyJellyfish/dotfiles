@@ -1,0 +1,31 @@
+# yaml-language-server: $schema: "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+blocks:
+  - alignment: "left"
+    segments:
+      - foreground: "#77E4F7"
+        properties:
+          style: "full"
+        style: "plain"
+        template: "{{ if .Segments.Git.RepoName }}{{ .Segments.Git.RepoName }}{{ if hasPrefix (lower .Segments.Git.Dir) (lower .PWD) }}{{ substr (len .Segments.Git.Dir) (len .PWD) .PWD }}{{end}}{{ else }}{{ .Path }}{{ end }}"
+        type: "path"
+      - foreground: "#77E4F7"
+        style: "powerline"
+        template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Major }}.{{ .Minor }}{{ end }}"
+        type: "python"
+      - foreground: "#77E4F7"
+        foreground_templates:
+          - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}"
+          - "{{ if gt .Ahead 0 }}#16c60c{{ end }}"
+          - "{{ if gt .Behind 0 }}#f450de{{ end }}"
+        properties:
+          fetch_status: false
+          fetch_upstream_icon: false
+        style: "plain"
+        template: " {{ .HEAD }}"
+        type: "git"
+      - foreground: "#43D426"
+        style: "plain"
+        template: " ❯ "
+        type: "text"
+    type: "prompt"
+version: 2
