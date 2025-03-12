@@ -81,6 +81,8 @@ zstyle ':omz:plugins:nvm' lazy yes
 plugins=(aliases colored-man-pages command-not-found dirpersist evalcache git gitignore extract nvm vi-mode zoxide)
 
 source $ZSH/oh-my-zsh.sh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # User configuration
 
