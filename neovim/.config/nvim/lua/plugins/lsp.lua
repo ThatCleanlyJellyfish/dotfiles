@@ -6,7 +6,7 @@ return {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
-      { 'WhoIsSethDaniel/mason-tool-installer.nvim', opts = { ensure_installed = { 'pyright' } } },
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       --
       {
@@ -144,11 +144,40 @@ return {
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-            map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-            end, '[T]oggle Inlay [H]ints')
-          end
+          map('<leader>th', function()
+            local current_config = vim.diagnostic.config() or {}
+            local function toggle_severity(config)
+              if type(config) == "table" then
+                local severity = config.severity or {}
+                if severity.min == vim.diagnostic.severity.HINT then
+                  severity.min = vim.diagnostic.severity.INFO
+                else
+                  severity.min = vim.diagnostic.severity.HINT
+                end
+                config.severity = severity
+              else
+                config = {severity={min=vim.diagnostic.severity.INFO}}
+              end
+              return config
+            end
+
+            local new_config = {}
+            if current_config.underline then
+              new_config.underline = toggle_severity((current_config.underline))
+            end
+            if current_config.virtual_text then
+              new_config.virtual_text = toggle_severity(current_config.virtual_text)
+            end
+            if current_config.signs then
+              new_config.signs = toggle_severity(current_config.signs)
+            end
+            if current_config.float then
+              new_config.float = toggle_severity(current_config.float)
+            end
+            vim.diagnostic.config(new_config)
+
+
+          end, "Toggle Diagnostic Hints")
         end,
       })
 
@@ -157,6 +186,10 @@ return {
       --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
       local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true
+      }
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       -- Enable the following language servers
@@ -169,9 +202,11 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        ["cmake-language-server"] = {},
+        clangd = {},
         -- gopls = {},
         -- pyright = {},
+        ruff = { },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -181,8 +216,8 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-        cspell = {},
-
+        cspell = { },
+        pyright = { },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -196,6 +231,10 @@ return {
               -- diagnostics = { disable = { 'missing-fields' } },
             },
           },
+        },
+        verible = { },
+        yamlls = {
+          capabilities = { document_formatting = true },
         },
       }
 
