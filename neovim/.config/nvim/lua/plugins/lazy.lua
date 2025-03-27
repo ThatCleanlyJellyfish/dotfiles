@@ -3,28 +3,6 @@ return {
   'LunarVim/bigfile.nvim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'whiteinge/diffconflicts', -- Nicer diff tool.
-  -- Automatic split resizing.
-  {
-    'beauwilliams/focus.nvim',
-    version = false,
-    opts = {
-      autoresize = {
-        enable = false,
-        height_quickfix = 10,
-      },
-      -- Set option 'true' to enable the option in the focussed window only.
-      ui = {
-        number = false,
-        relativenumber = false,
-        hybridnumber = true,
-        absolutenumber_unfocussed = true, -- Preserve absolute line numbers in unfocussed windows.
-        signcolumn = false,
-        cursorline = true,
-        cursorcolumn = false,
-        winhighlight = false,
-      },
-    },
-  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
