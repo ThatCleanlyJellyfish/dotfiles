@@ -1,0 +1,4 @@
+#!/bin/sh
+# Wrapper to always run kitty in single instance mode. This reduces startup
+# overheads after the first window is opened.
+exec /usr/bin/kitty --single-instance "$@"
