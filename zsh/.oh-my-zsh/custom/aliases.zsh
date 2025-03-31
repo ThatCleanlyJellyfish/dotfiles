@@ -8,3 +8,5 @@ alias ll='ls -lh'
 alias lla='ls -lAh'
 
 alias gch='git checkout'
+
+alias pyv='. ./$1/.venv/bin/activate'
