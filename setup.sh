@@ -5,7 +5,7 @@
 
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install fd-find fzf ripgrep stow zoxide zsh
+sudo apt-get install fd-find fzf ripgrep stow xclip zoxide zsh
 
 #########################
 # Rustup + Bob + Neovim #
