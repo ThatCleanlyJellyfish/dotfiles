@@ -1,0 +1,9 @@
+[submodule "zsh/.oh-my-zsh/custom/plugins/evalcache"]
+	path = zsh/.oh-my-zsh/custom/plugins/evalcache
+	url = https://github.com/mroth/evalcache
+[submodule "zsh/.oh-my-zsh/custom/plugins/zshrc.d"]
+	path = zsh/.oh-my-zsh/custom/plugins/zshrc.d
+	url = https://github.com/mattmc3/zshrc.d
+[submodule "zsh/.oh-my-zsh/custom/plugins/fzf-zsh-plugin"]
+	path = zsh/.oh-my-zsh/custom/plugins/fzf-zsh-plugin
+	url = https://github.com/unixorn/fzf-zsh-plugin
