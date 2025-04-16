@@ -6,8 +6,10 @@ return {
     opts = {
       keepFoldsAcrossSessions = false,
       pauseFoldsOnSearch = true,
-      setupFoldKeymaps = true,
-      hOnlyOpensOnFirstColumn = false,
+      foldKeymaps = {
+        setup = true, -- modifies `h` and `l`
+        hOnlyOpensOnFirstColumn = false,
+      },
     },
   },
   {
