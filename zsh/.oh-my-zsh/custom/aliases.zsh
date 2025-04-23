@@ -1,4 +1,4 @@
-alias fd='fdfind --no-ignore'
+alias fd='fdfind --no-ignore --hidden'
 alias stow='stow -v'
 
 alias ls='ls --color=tty --group-directories-first'
