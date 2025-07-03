@@ -1,1 +1,1 @@
-export PYTHONBREAKPOINT='IPython.core.debugger.set_trace'
+export PYTHONBREAKPOINT='ipdb.set_trace'
