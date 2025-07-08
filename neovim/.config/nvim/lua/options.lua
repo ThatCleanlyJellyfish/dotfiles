@@ -53,4 +53,7 @@ vim.diagnostic.config({ signs = { text = {
   WARN  = "",
 } } })
 
+-- Default window borders
+vim.o.winborder = 'rounded'
+
 -- vim: ts=2 sts=2 sw=2 et
