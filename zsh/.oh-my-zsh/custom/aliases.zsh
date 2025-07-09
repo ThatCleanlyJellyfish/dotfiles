@@ -10,3 +10,5 @@ alias lla='ls -lAh'
 alias gch='git checkout'
 
 alias pyv='. ./$1/.venv/bin/activate'
+
+alias tf='terraform'
