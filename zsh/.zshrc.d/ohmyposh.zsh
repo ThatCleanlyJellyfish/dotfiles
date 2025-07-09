@@ -1,3 +1,4 @@
+export PATH="$HOME/.local/bin:$PATH"
 _evalcache oh-my-posh init zsh --config $ZSH_CUSTOM/prompt.omp.yaml
 # Pass the number of background jobs to oh-my-posh for the prompt.
 function set_poshcontext() {
