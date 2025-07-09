@@ -52,14 +52,6 @@ git clone --recurse-submodules git@github.com:ThatCleanlyJellyfish/dotfiles.git
 cd dotfiles
 stow git ipython less neovim zsh
 
-#########
-# Pyenv #
-#########
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-xz-utils tk-dev libffi-dev liblzma-dev
-curl -fsSL https://pyenv.run | bash
-
 ###############
 # literal-lib #
 ###############
