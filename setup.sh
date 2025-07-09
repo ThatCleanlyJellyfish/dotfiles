@@ -30,7 +30,6 @@ read -p "Add the above SSH key to your Github profile and press any key to conti
 ######################################
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 curl -s https://ohmyposh.dev/install.sh | bash -s
-git clone https://github.com/mroth/evalcache ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/evalcache
 # Change default shell to zsh
 sudo chsh -s $(which zsh) $USER
 
@@ -49,7 +48,7 @@ nvm install --lts
 # rm any zshrc which has been set up during above installs. We will replace it
 # with the one from dotfiles.
 rm -f ~/.zshrc
-git clone git@github.com:ThatCleanlyJellyfish/dotfiles.git
+git clone --recurse-submodules git@github.com:ThatCleanlyJellyfish/dotfiles.git
 cd dotfiles
 stow git ipython less neovim zsh
 
