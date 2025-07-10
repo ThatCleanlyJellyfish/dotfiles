@@ -1,4 +1,8 @@
-#!/bin/bash -e
+#!/bin/bash
+# Exit on first error.
+set -e
+# Print all commands before running.
+set -x
 # Setup for new Debian install. Should mostly work for Ubuntu too.
 # WARN: This script is designed to be as unattended as possible, but it's not
 # well tested!
