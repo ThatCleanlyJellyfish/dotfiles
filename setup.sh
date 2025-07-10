@@ -81,12 +81,13 @@ literal_lib() {
     make init
 }
 
+
 #################
 ###   MAIN    ###
 #################
 # Executes in whatever shell this script is first invoked with.
 if [ -z "${IN_ZSH:-}" ]; then
-    setup_git_key # This step is interactive, so do it early!
+    setup_github_key # This step is interactive, so do it early!
     update_os_and_install_deps
     dotfiles
 
