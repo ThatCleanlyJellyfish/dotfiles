@@ -1,0 +1,13 @@
+[Unit]
+Description=Kanata keyboard remapper
+Documentation=https://github.com/jtroo/kanata
+Wants=modprobe@uinput.service
+After=modprobe@uinput.service
+
+[Service]
+Type=simple
+ExecStart=%h/.cargo/bin/kanata --nodelay --quiet
+Restart=never
+
+[Install]
+WantedBy=graphical-session.target
