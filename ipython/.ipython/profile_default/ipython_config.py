@@ -669,6 +669,8 @@ c = get_config()  #noqa
 #          highlighting. To see available styles, run `pygmentize -L styles`.
 #  Default: traitlets.Undefined
 # c.TerminalInteractiveShell.highlighting_style = traitlets.Undefined
+from IPython.core import ultratb
+ultratb.VerboseTB.tb_highlight = 'ansiblack bg:ansiyellow'
 
 ## Override highlighting format for specific tokens
 #  Default: {}
