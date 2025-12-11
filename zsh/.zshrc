@@ -4,7 +4,20 @@
 ##############################################################################
 export ZSH="$HOME/.oh-my-zsh"
 zstyle ':omz:plugins:nvm' lazy yes
-plugins=(aliases colored-man-pages command-not-found dirpersist evalcache git extract nvm vi-mode zoxide zshrc.d)
+plugins=(
+	aliases
+	colored-man-pages
+	command-not-found
+	dirpersist
+	evalcache
+	extract
+	git
+	nvm
+	tmux
+	vi-mode
+	zoxide
+	zshrc.d
+)
 source $ZSH/oh-my-zsh.sh
 # `colored-man-pages` makes `less` search highlights hard to see. Fix that...
 less_termcap[so]="${fg_bold[black]}${bg[yellow]}"
