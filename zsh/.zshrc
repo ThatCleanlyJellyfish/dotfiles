@@ -4,6 +4,7 @@
 ##############################################################################
 export ZSH="$HOME/.oh-my-zsh"
 zstyle ':omz:plugins:nvm' lazy yes
+ZSH_TMUX_AUTOSTART="true"
 plugins=(
 	aliases
 	colored-man-pages
