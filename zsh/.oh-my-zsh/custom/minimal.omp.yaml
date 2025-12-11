@@ -3,7 +3,7 @@ blocks:
   - alignment: "left"
     segments:
       - foreground: "#77E4F7"
-        options:
+        properties:
           style: "full"
         style: "plain"
         template: "{{ if .Segments.Git.RepoName }}{{ .Segments.Git.RepoName }}{{ if hasPrefix (lower .Segments.Git.Dir) (lower .PWD) }}{{ substr (len .Segments.Git.Dir) (len .PWD) .PWD }}{{end}}{{ else }}{{ .Path }}{{ end }}"
@@ -17,7 +17,7 @@ blocks:
           - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}"
           - "{{ if gt .Ahead 0 }}#16c60c{{ end }}"
           - "{{ if gt .Behind 0 }}#f450de{{ end }}"
-        options:
+        properties:
           fetch_status: false
           fetch_upstream_icon: false
         style: "plain"

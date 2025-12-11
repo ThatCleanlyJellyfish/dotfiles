@@ -5,10 +5,14 @@ blocks:
   alignment: left
   segments:
   - type: os
+    options:
+      cache_duration: none
     template: "{{ if .WSL }}WSL at {{ end }}{{.Icon}} "
     foreground: "#26C6DA"
     style: plain
   - type: session
+    options:
+      cache_duration: none
     template: "{{ if .SSHSession }}<#FF0700>\ueba9 </>{{ end }}{{ .UserName }}@{{ .HostName }}"
     foreground: "#26C6DA"
     style: diamond
@@ -16,6 +20,7 @@ blocks:
     style: plain
     foreground: "#FFE700"  # fallback (unused)
     options:
+      cache_duration: none
       fetch_status: true
       fetch_upstream_icon: true
     template: "{{ if .IsWorkTree }} <#aa6666>[{{ base .Dir }}]</>{{ end }}\
@@ -33,6 +38,8 @@ blocks:
       {{ if .Staging.Changed }} <#b0e0e6>\uf046 {{ .Staging.String }}</>{{ end }}\
       {{ if gt .StashCount 0 }} <#aabbee> {{ .StashCount }}{{ end }}"
   - type: text
+    options:
+      cache_duration: none
     template: " {{if ne .Env.BG_JOBS \"0\" }}\ueba2 {{ .Env.BG_JOBS }}{{ end }}"
     foreground: "#ffffff"
     style: plain
@@ -40,21 +47,27 @@ blocks:
 - type: prompt
   alignment: right
   segments:
-  - leading_diamond: 
+  - options:
+      cache_duration: none
+    leading_diamond: 
     trailing_diamond: 
     template:  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Major }}.{{ .Minor }}{{ end }}
     foreground: "#cacaca"
     background: "#4F7A45"
     type: python
     style: diamond
-  - leading_diamond: 
+  - options:
+      cache_duration: none
+    leading_diamond: 
     trailing_diamond: 
     template: "\ue718 {{ .Full }} "
     foreground: "#ffffff"
     background: "#6CA35E"
     type: node
     style: diamond
-  - leading_diamond: " \ue0b6"
+  - options:
+      cache_duration: none
+    leading_diamond: " \ue0b6"
     trailing_diamond: 
     template: "\ue738 {{ .Full }} "
     foreground: "#ffffff"
@@ -63,10 +76,12 @@ blocks:
     style: diamond
   - options:
       always_enabled: true
+      cache_duration: none
     template: " {{ if gt .Code 0 }}<#ff0000>\uf00d</>{{ else }}<#23d18b>\uf42e</>{{ end }} "
     type: status
     style: plain
   - options:
+      cache_duration: none
       threshold: 1000
     template: "{{ .FormattedMs }} "
     foreground: "#bab02a"
@@ -76,6 +91,7 @@ blocks:
   alignment: left
   segments:
   - options:
+      cache_duration: none
       style: full
     template: "{{ if .Segments.Git.RepoName }}\ue5fb {{ if hasPrefix (lower .Segments.Git.Dir) (lower .PWD) }}{{ substr (len .Segments.Git.Dir) (len .PWD) .PWD }}{{end}}{{ else }}{{ .Path }}{{ end }}"
     foreground: "#77E4F7"
