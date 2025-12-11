@@ -7,3 +7,6 @@
 [submodule "zsh/.oh-my-zsh/custom/plugins/fzf-zsh-plugin"]
 	path = zsh/.oh-my-zsh/custom/plugins/fzf-zsh-plugin
 	url = https://github.com/unixorn/fzf-zsh-plugin
+[submodule "tmux/tmux-fzf-copy"]
+	path = tmux/.tmux-fzf-copy
+	url = https://github.com/rajashekar/tmux-fzf-copy
