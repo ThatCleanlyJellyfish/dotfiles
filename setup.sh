@@ -35,7 +35,7 @@ update_os_and_install_deps() {
         -o Dpkg::Options::="--force-confdef" \
         -o Dpkg::Options::="--force-confold" \
         upgrade
-    sudo apt-get install --assume-yes btop fd-find fzf kitty-terminfo ripgrep stow xclip zoxide zsh
+    sudo apt-get install --assume-yes btop fd-find fzf kitty-terminfo ripgrep stow unzip xclip zoxide zsh
 }
 
 setup_zsh() {
