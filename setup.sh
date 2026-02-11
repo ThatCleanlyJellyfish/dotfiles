@@ -89,10 +89,10 @@ literal_lib() {
 if [ -z "${IN_ZSH:-}" ]; then
     setup_github_key # This step is interactive, so do it early!
     update_os_and_install_deps
-    dotfiles
 
     # Setup ZSH and execute the rest of the script with it.
     setup_zsh
+    dotfiles
     export IN_ZSH=1
     exec zsh "$0" "$@"
 fi
